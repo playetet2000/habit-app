@@ -1,0 +1,49 @@
+@import "bootstrap";
+
+body {
+  padding-top: 10px;
+}
+html {
+  overflow-y: scroll;
+}
+
+.library-item {
+  min-height: 150px;
+}
+
+.surveyQuestionBox {
+
+}
+
+.surveyQuestionBox p {
+
+}
+.surveyQuestionBox .panel-heading {
+
+}
+
+.surveyQuestionBox .responseList {
+  list-style: none;
+  list-style-image: none;
+
+
+}
+.surveyQuestionBox p {
+font-size:20px;
+font-weight: bold;
+}
+
+.surveyQuestionBox .responseList li {
+ padding-bottom:14px;
+ padding-left: 2em;
+ text-indent: -2em;
+}
+.surveyQuestionBox .responseList li label {
+font-weight: normal;
+}
+.surveyQuestionBox .responseList li input {
+ margin-right: 10px;
+
+
+
+}

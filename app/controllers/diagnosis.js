@@ -1,11 +1,20 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
+
+
+
+
   responseMessage:'',
   upholderScore: 0,
   questionerScore: 0,
   rebelScore: 0,
   obligerScore: 0,
+  result:'',
+  upholderHappen:'',
+  questionerHappen:'',
+  rebelHappen:'',
+  obligerHappen:'',
 
 
   questionResponse1:  0,
@@ -93,21 +102,60 @@ export default Ember.Controller.extend({
   actions: {
 
     caculateScore: function() {
+
+      const trytobe = this.get('trytry');
+      const age = this.get('age');
+      const habit = this.get('habit');
       const finalUpholder = this.get('upholderScore');
       const finalQuestioner = this.get('questionerScore');
       const finalRebel = this.get('rebelScore');
       const finalObliger = this.get('obligerScore');
+
+       this.set('rebelHappen','');
+       this.set('questionerHappen','');
+       this.set('obligerHappen','');
+       this.set('upholderHappen','');
+
+      if (finalUpholder > finalQuestioner && finalUpholder > finalObliger && finalUpholder > finalRebel){
+        this.set('result','Upholder');
+        this.set('upholderHappen',"upholerShow")
+
+      } else if (finalQuestioner >= finalRebel && finalQuestioner >= finalObliger && finalQuestioner >= finalUpholder )
+        {
+          this.set('result','Questioner');
+          this.set('questionerHappen',"questionerShow")
+        } else if (finalObliger >= finalRebel && finalObliger >= finalUpholder && finalObliger > finalObliger)
+        {
+          this.set('result','Obliger');
+          this.set('obligerHappen',"obligerShow")
+        } else if (finalRebel > finalUpholder && finalRebel > finalObliger && finalRebel > finalQuestioner)
+           {
+             this.set('result','Rebel');
+             this.set('rebelHappen',"rebelShow")
+           }
+
+      const finalResult = this.get('result');
       const newFinalScore = this.store.createRecord('diagnosis',{
 
+        age:age,
+        habit:habit,
+        tryto:trytobe,
         upholderScore:finalUpholder,
         questionerScore:finalQuestioner,
         rebelScore:finalRebel,
-        finalObliger:finalObliger });
-       newFinalScore.save().then((response)=>{
-       this.set('responseMessage', `thank you! We saved your email address with`);
-     });
+        obligerScore:finalObliger,
+        resultScore:finalResult,
 
-    
+      });
+       newFinalScore.save();
+
+
+        $('#myModal').modal('show');
+
+
+
+
+
       },
 
 

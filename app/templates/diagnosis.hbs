@@ -3,7 +3,7 @@
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
-      <div class="modal-header">
+      <div class="modal-header mt-font-size">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 {{#if upholderHappen}}
               <h4 class="modal-title" id="myModalLabel">Upholder Level {{upholderScore}}</h4>
@@ -15,30 +15,64 @@
                         <h4 class="modal-title" id="myModalLabel">Obliger Level {{obligerScore}}</h4>
 {{/if}}
     </div>
-      <div class="modal-body">
+      <div class="modal-body mt-font-size">
          <div class="media">
              <div class="media-left media-middle">
             {{#if upholderHappen}}
-                 <img class="media-object" src="/assests/images/actor.png" alt="Upholder Picture">
+                 <img class="media-object" src="/assests/images/upholder.png" alt="Upholder Picture">
                  {{else if rebelHappen}}
-                     <img class="media-object" src="/assests/images/actor.png" alt="Rebel Picture">
+                     <img class="media-object" src="/assests/images/Rebel.png" alt="Rebel Picture">
                        {{else if questionerHappen}}
-                        <img class="media-object" src="/assests/images/actor.png" alt="Question Picture">
+                        <img class="media-object" src="/assests/images/questioner.png" alt="Question Picture">
                           {{else}}
-                            <img class="media-object" src="/assests/images/actor.png" alt="Obliger Picture">
+                            <img class="media-object" src="/assests/images/Obliger.png" alt="Obliger Picture">
            {{/if}}
              </div>
-        <div class="media-body">
+        <div class="media-body mt-font-size">
           {{#if upholderHappen}}
            <h4 class="media-heading">ＵＰＨＯＬＤＥＲ</h4>
-              <p class="resultDescription"> People who is always follow their schedual even no other people knows it. This is the type most easy to aquire a new habit. If they decide to aquire a habit they will try to make it happen. But some time they will be too stick on their plan make themself exhasuted.
+              <p class="resultDescription">
+                <p>Congratulations you are an Upholder.</p>
+                <p>
+                  You always follow a schedule even if other other people don’t notice. Your type find acquiring a new habit to be an easy task. If you decide to acquire a habit they will try to make it happen. You have a driven approach and stick to your plan however sometimes this can make you feel exhausted.
+               </p>
+               <p>
+                   As a upholder, the best Product for you to build up a habit is something that helps you relax and isn’t too harsh on you when things aren’t going as well as you expect.
+               </p>
               </p>
               {{else if rebelHappen}}
                  <h4 class="media-heading">ＲＥＢＥＬ</h4>
+                 <p class="resultDescription">
+                   <p>Congratulations you are an Rebel.</p>
+                   <p>
+                     You don’t like rules or directions that limit your thought and movement. You are always thinking outside the box and don’t like to follow other people’s pace. If you’re given a direction your preference will be to do the opposite.
+                   </p>
+                  <p>
+                      As a Rebel, the best product for you to build a habit is something make your habit building process feel unique and driven entirely for you. The tool is customised to you and your goal, as you work the tool will adjust according to your progress, direction and in the end will be totally unique to you and your journey. This will make you feel special and  support your decision making process.
+                  </p>
+                 </p>
                   {{else if questionerHappen}}
                      <h4 class="media-heading">ＱＵＥＳＴＩＯＮＥＲ</h4>
+                     <p class="resultDescription">
+                       <p>Congratulations you are an Questioner.</p>
+                       <p>
+                        Before you decide or commit to anything, you need to know why and how this decision will help you with your goal. If the answer is abstract and it doesn’t convince you, you will not to follow or will abandon the task. You always ask a lot of questions about a rule, how systems are working and how it relates to you an your goals. But after you fully understand a concept or a habit you want to do will put all your effort to making it happened.
+                       </p>
+                      <p>
+                          As a Questioner, the best product for you to build up your habit is something that can give you deeper context, keep reminding you of the reason for your efforts and continuosly show the progress you’re making toward your goal.
+                      </p>
+                     </p>
                        {{else}}
                         <h4 class="media-heading">ＯＢＬＩＧＥＲ</h4>
+                        <p class="resultDescription">
+                          <p>Congratulations you are an Obliger.</p>
+                          <p>
+                        You care about other people’s opinions of you and how your actions will affect them. You appear to be a highly self-disciplined person but when the outcome only affects yourself and no one else is observing your progress or work, you loose drive and motivation to complete your tasks and goals. It is easy for you to build a habit, if you let other people know what are going to do or find someone else to work with you and observe your progress.
+                          </p>
+                         <p>
+                           As a Obliger, the best product for you to build up your habit allows your to record your work and share your progress with others whose opinions matter to you. Feedback is an essential component of motivation for you.
+                         </p>
+                        </p>
           {{/if}}
 
         </div>
@@ -47,7 +81,6 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>
